@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en" class="h-100">
 <head>
-    <title>App Name: A Coding Project By Patricio Salazar</title>
+    <title>TacoCat: A Coding Project By Patricio Salazar</title>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -38,7 +38,7 @@
     <!-- ==== Nav Section ==== -->
     <nav class="navbar navbar-expand-md navbar-dark fixed-top">
         <div class="container-fluid">
-            <a class="navbar-brand" href="index.html"><img src="img/patricio-salazar-logo-characters_favicon.svg" class="d-inline-block align-text-top" alt="Patricio Salazar logo" width="30" height="24"> APP NAME</a>
+            <a class="navbar-brand" href="index.html"><img src="img/patricio-salazar-logo-characters_favicon.svg" class="d-inline-block align-text-top" alt="Patricio Salazar logo" width="30" height="24"> TacoCat</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
                 aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -67,14 +67,57 @@
     <!-- ==== Main Section ==== -->
     <main class="flex-shrink-0">
         <div class="container py-5 px-5 mt-5">
-            <h2 class="border-1 border-bottom border-dark">The Code for APP NAME.</h2>
+            <h2 class="border-1 border-bottom border-dark">The Code for TacoCat.</h2>
             <div class="row row-cols-1 row-cols-lg-2">
                 <div class="col-lg-8">
                     <pre class="line-numbers">
                         <code class="language-javascript">
-                            // Call Hello World
-                            function helloWorld() {
-                                alert('Hello World');
+                            // get our user input
+                            function getValue() {
+                                // make sure alert is invisible
+                                document.getElementById("alert").classList.add("invisible");
+                            
+                                // get user string from the page
+                                userString = document.getElementById("userString").value;
+                            
+                                // check for a palindrome
+                                let returnObj = checkForPalindrome(userString);
+                            
+                                // display our message to the screen
+                                displayMessage(returnObj);
+                            }
+                            
+                            // check for a palindrome
+                            function checkForPalindrome(userString) {
+                                userString = userString.toLowerCase();
+                            
+                                // remove spaces and special characters
+                                let regex = /[^a-z0-9]/gi;
+                                userString = userString.replace(regex, "");
+                            
+                                let revString = [];
+                                let returnObj = {};
+                            
+                                for (let i = userString.length - 1; i >= 0; i--) {
+                                    revString += userString[i];
+                                }
+                            
+                                if(revString == userString) {
+                                    returnObj.msg = "Well done! You entered a palindrome!"
+                                } else {
+                                    returnObj.msg = "Sorry! You did not enter a palindrome!"
+                                }
+                            
+                                returnObj.reversed = revString;
+                            
+                                return returnObj;
+                            }
+                            
+                            // display a message to the screen
+                            function displayMessage(returnObj) {
+                                document.getElementById("alertHeader").innerHTML = returnObj.msg;
+                                document.getElementById("msg").innerHTML = `Your phrase reversed is: ${returnObj.reversed} `;
+                                document.getElementById("alert").classList.remove("invisible");
                             }
                         </code>
                     </pre>

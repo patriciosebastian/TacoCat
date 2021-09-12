@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en" class="h-100">
 <head>
-    <title>App Name: A Coding Project By Patricio Salazar</title>
+    <title>TacoCat: A Coding Project By Patricio Salazar</title>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -25,7 +25,7 @@
     <!-- ==== Nav Section ==== -->
     <nav class="navbar navbar-expand-md navbar-dark fixed-top">
         <div class="container-fluid">
-            <a class="navbar-brand" href="index.html"><img src="img/patricio-salazar-logo-characters_favicon.svg" class="d-inline-block align-text-top" alt="Patricio Salazar logo" width="30" height="24"> APP NAME</a>
+            <a class="navbar-brand" href="index.html"><img src="img/patricio-salazar-logo-characters_favicon.svg" class="d-inline-block align-text-top" alt="Patricio Salazar logo" width="30" height="24"> TacoCat</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
                 aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -53,8 +53,37 @@
     </nav>
     <!-- ==== Main Section ==== -->
     <main class="flex-shrink-0">
-        <div class="container">
-
+        <div class="container mt-5">
+            <div class="row row-cols-1 row-cols-lg-2">
+                <div class="col">
+                    <h1 class="display-5 fw-bold lh-1 mb-3">
+                        TacoCat: A Coding Project
+                    </h1>
+                    <h4 class="lead pb-3">
+                        Taco Cat is a palindrome. A Palindrome is a word, phrase, or sequence that reads the same backwards as forward. Write a program that checks if the phrase entered is a palindrome.
+                    </h4>
+                </div>
+                <div class="col">
+                    <h5 class="border-1 border-bottom border-danger">
+                        Enter A phrase or word to check
+                    </h5>
+                    <form class="row gx-3 gy-2">
+                        <div class="col">
+                            <input class="form-control" id="userString" type="text" placeholder="Enter A String" aria-label="Enter A String">
+                        </div>
+                        <div class="col-12">
+                            <button class="btn btn-danger" id="btnSubmit" type="button">Check It</button>
+                        </div>
+                        <div class="alert alert-danger mt-5 invisible fade show" id="alert" role="alert">
+                            <h4 Class="alert-heading" id="alertHeader">Well Done!</h4>
+                            <hr>
+                            <p class="mb-0" id="msg">
+                                <!-- Insert a Message Here -->
+                            </p>
+                        </div>
+                    </form>
+                </div>
+            </div>
         </div>
     </main>
     <!-- ==== Footer Section ==== -->
@@ -79,7 +108,7 @@
     </footer>
     <!-- External JS -->
     <script src="js/site.js"></script>
-    <!-- REMOVE or EDIT -->
-    <!--  <script> document.querySelector("#btnSubmit").addEventListener("click", getValues); </script>  -->
+    <!-- #btnSubmit Event Listener -->
+     <script> document.querySelector("#btnSubmit").addEventListener("click", getValue); </script> 
 </body>
 </html>
